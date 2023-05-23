@@ -9,6 +9,9 @@ class TodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.teal,
+      ),
       home: BlocProvider(
         create: (context) => TodoBloc(),
         child: TodoScreen(),
@@ -30,6 +33,7 @@ class TodoScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Todo App'),
+        backgroundColor: Colors.teal,
       ),
       body: Column(
         children: [
@@ -52,6 +56,9 @@ class TodoScreen extends StatelessWidget {
             ),
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.teal,
+            ),
             onPressed: () {
               Todo newTodo = Todo(
                 title: _titleController.text,
